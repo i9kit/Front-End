@@ -1,0 +1,83 @@
+.order_header {
+    @apply flex w-full items-center bg-white shadow justify-between rounded-lg p-7 mt-7 z-2;
+
+    .information {
+        @apply flex items-center gap-10;
+
+        .heading {
+            > div {
+                &:first-child {
+                    @apply font-semibold text-lg;
+                }
+                &:last-child {
+                    @apply text-sm opacity-60;
+                }
+            }
+        }
+    }
+
+    .action {
+        @apply flex items-center justify-end gap-10;
+
+        .status {
+            @apply text-white rounded-md;
+        }
+
+        .button {
+            transition: all ease-in-out 0.3s;
+          }
+        
+        :hover.button {
+            @apply text-primary;
+            transform: rotate(90deg)
+        }
+    }
+}
+
+.order_list {
+    @apply z-1 mt-2 relative;
+    animation: 0.7s orderListAnimation ease-in-out;
+
+    .list {
+        @apply bg-white rounded-lg mx-2 shadow-md z-1;
+
+        .item {
+            @apply mb-4 flex items-center rounded-lg bg-white px-6 py-3 pr-10 border-b border-b-black/30 z-1;
+
+            .row {
+                @apply flex w-full items-center justify-between;
+
+                .information {
+                    @apply ml-6;
+
+                    > div {
+                        &:first-child {
+                            @apply text-lg font-semibold;
+                        }
+
+                        &:last-child {
+                            @apply text-sm opacity-40;
+                        }
+                    }
+                }
+
+                .price {
+                    @apply text-lg font-medium;
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes orderListAnimation {
+    from {
+        transform: translateY(-50%);
+        opacity: 0.8;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
