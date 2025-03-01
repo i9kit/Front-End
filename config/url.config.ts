@@ -1,0 +1,9 @@
+export const ADMIN_PANEL_URL = '/admin'
+
+export const getSiteUrl = () => process.env.APP_URL as string
+
+export const getAdminUrl = (path = '') => `${ADMIN_PANEL_URL}${path}`
+
+export const page_quality = 1
+
+export const page_product_quality = 4
